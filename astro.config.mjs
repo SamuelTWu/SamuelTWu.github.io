@@ -7,4 +7,6 @@ export default defineConfig({
     remarkPlugins: [remarkMath],
     rehypePlugins: [rehypeKatex],
   },
+  site: 'https://samtwu.github.io',
+  base: 'my-repo',
 });
