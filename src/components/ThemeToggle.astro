@@ -73,10 +73,17 @@ import Icon from './Icon.astro';
 			super();
 
 			const button = this.querySelector('button')!;
+			const root = document.documentElement;
 
 			/** Set the theme to dark/light mode. */
 			const setTheme = (dark: boolean) => {
-				document.documentElement.classList[dark ? 'add' : 'remove']('theme-dark');
+				if (dark) {
+					root.classList.add('theme-dark');
+					root.classList.remove('theme-light');
+				} else {
+					root.classList.add('theme-light');
+					root.classList.remove('theme-dark');
+				}
 				button.setAttribute('aria-pressed', String(dark));
 			};
 
@@ -88,7 +95,13 @@ import Icon from './Icon.astro';
 		}
 
 		isDark() {
+			console.log("theme-dark")
 			return document.documentElement.classList.contains('theme-dark');
+		}
+
+		isLight() {
+			console.log("theme-light")
+			return document.documentElement.classList.contains('theme-light');
 		}
 	}
 	customElements.define('theme-toggle', ThemeToggle);

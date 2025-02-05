@@ -26,32 +26,47 @@ const projects = (await getCollection('work'))
 ---
 
 <BaseLayout>
-	<div class="stack gap-20 lg:gap-48">
-		<div class="wrapper stack gap-8 lg:gap-20">
+	<div class="stack gap-20 lg:gap-30">
+		<div class="fullscreen-section">
+			<script src="../styles/dots.js"></script>
+			<script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+			<script src="../styles/confetti.js"></script>
+			<script src="../styles/palette-ai.js"></script>
+			
+			<div class = "phantom-container">
+				<div class = "container">
+					<h1>Let your creativity shine!</h1>
+					<div class="input-group">
+						<input type="text" id="inputBox" placeholder="Enter a Color Theme for the Site Here" />
+						<button onclick="sendInput()">Submit</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="stack gap-20 lg:gap-30">
 			<header class="hero">
 				<Hero
-					title="Hello, my name is Jeanine White"
-					tagline="I am a Creative Developer who is currently based in Portland, Oregon."
+					title="Hello, my name is Sam Wu"
+					tagline="I am an AI Masters Graduate currently based in Boston, Massachusetts."
 					align="start"
 				>
+				
 					<div class="roles">
-						<Pill><Icon icon="code" size="1.33em" /> Developer</Pill>
-						<Pill><Icon icon="microphone-stage" size="1.33em" /> Speaker</Pill>
+						<Pill><Icon icon="code" size="1.33em" /> Software</Pill>
+						<Pill><Icon icon="microphone-stage" size="1.33em" /> AI Researcher</Pill>
 						<Pill><Icon icon="pencil-line" size="1.33em" /> Writer</Pill>
 					</div>
 				</Hero>
-
 				<img
-					alt="Jeanine White smiling in a red plaid shirt and tortoise shell glasses"
+					alt="placeholder"
 					width="480"
 					height="620"
 					src="/assets/portrait.jpg"
 				/>
-			</header>
-
-			<Skills />
 		</div>
-
+		<Skills />
+		<div />
+		</div>
 		<main class="wrapper stack gap-20 lg:gap-48">
 			<section class="section with-background with-cta">
 				<header class="section-header stack gap-2 lg:gap-4">
@@ -250,3 +265,5 @@ const projects = (await getCollection('work'))
 		}
 	}
 </style>
+
+

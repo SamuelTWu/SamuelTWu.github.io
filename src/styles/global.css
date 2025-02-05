@@ -1,27 +1,66 @@
 /* Global variables */
-:root {
-	/* Colors */
-	--gray-0: #090b11;
-	--gray-50: #141925;
-	--gray-100: #283044;
-	--gray-200: #3d4663;
-	--gray-300: #505d84;
-	--gray-400: #6474a2;
-	--gray-500: #8490b5;
-	--gray-600: #a3acc8;
-	--gray-700: #c3cadb;
-	--gray-800: #e3e6ee;
-	--gray-900: #f3f4f7;
+:root{
+	--color-1:#ffffff;
+	--color-2:#f3dad9;
+	--color-3:#5e3195;
+	--color-4:#7f84e5;
+	--color-5:#000000;
+
+	/* Fonts */
+	--font-system: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
+		Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	--font-body: 'Neue Machina', var(--font-system);
+	--font-brand: 'Neue Machina', var(--font-system);
+
+	/* Transitions */
+	--theme-transition: 0.2s ease-in-out;
+
+	/* Text Sizes */
+	--text-sm: 0.875rem;
+	--text-base: 1rem;
+	--text-md: 1.125rem;
+	--text-lg: 1.25rem;
+	--text-xl: 1.625rem;
+	--text-2xl: 2.125rem;
+	--text-3xl: 2.625rem;
+	--text-4xl: 3.5rem;
+	--text-5xl: 4.5rem;
+}
+
+@font-face {
+    font-family: "Neue Machina";
+    src: url("https://db.onlinewebfonts.com/t/82b778d1b069157bf6b2e32dc4e1e3f1.eot");
+    src: url("https://db.onlinewebfonts.com/t/82b778d1b069157bf6b2e32dc4e1e3f1.eot?#iefix")format("embedded-opentype"),
+    url("https://db.onlinewebfonts.com/t/82b778d1b069157bf6b2e32dc4e1e3f1.woff2")format("woff2"),
+    url("https://db.onlinewebfonts.com/t/82b778d1b069157bf6b2e32dc4e1e3f1.woff")format("woff"),
+    url("https://db.onlinewebfonts.com/t/82b778d1b069157bf6b2e32dc4e1e3f1.ttf")format("truetype"),
+    url("https://db.onlinewebfonts.com/t/82b778d1b069157bf6b2e32dc4e1e3f1.svg#Neue Machina")format("svg");
+}
+
+:root.theme-light {
+	/* this is the text color */
+	--gray-0: color-mix(in srgb, var(--color-5), black 40%);
+	--gray-50: color-mix(in srgb, var(--color-5), black 30%);
+	--gray-100: color-mix(in srgb, var(--color-5), black 20%);
+	--gray-200: color-mix(in srgb, var(--color-5), black 10%);
+	--gray-300: var(--color-5);
+	--gray-400: color-mix(in srgb, var(--color-1), black 30%);
+	--gray-500: color-mix(in srgb, var(--color-1), black 20%);
+	--gray-600: color-mix(in srgb, var(--color-1), black 10%);
+	--gray-700: var(--color-1);
+	--gray-800: color-mix(in srgb, var(--color-1), white 10%);
+	--gray-900: color-mix(in srgb, var(--color-1), white 20%);
 	--gray-999-basis: 0, 0%, 100%;
 	--gray-999_40: hsla(var(--gray-999-basis), 0.4);
-	--gray-999: #ffffff;
+	--gray-999: color-mix(in srgb, var(--color-1), white 30%);
 
-	--accent-light: #c561f6;
-	--accent-regular: #7611a6;
-	--accent-dark: #1c0056;
-	--accent-overlay: hsla(280, 89%, 67%, 0.33);
+	--accent-light: var(--color-2);
+	--accent-regular: var(--color-3);
+	--accent-dark: var(--color-4);
+
+	--accent-overlay: var(--color-3);
 	--accent-subtle-overlay: var(--accent-overlay);
-	--accent-text-over: var(--gray-999);
+	--accent-text-over: var(--gray-0);
 
 	--link-color: var(--accent-regular);
 
@@ -29,6 +68,7 @@
 	--gradient-stop-1: var(--accent-light);
 	--gradient-stop-2: var(--accent-regular);
 	--gradient-stop-3: var(--accent-dark);
+
 	--gradient-subtle: linear-gradient(150deg, var(--gray-900) 19%, var(--gray-999) 150%);
 	--gradient-accent: linear-gradient(
 		150deg,
@@ -38,7 +78,7 @@
 	);
 	--gradient-accent-orange: linear-gradient(
 		150deg,
-		#ca7879,
+		var(--color-4),
 		var(--accent-regular),
 		var(--accent-dark)
 	);
@@ -51,62 +91,57 @@
 		0px 7px 7px rgba(9, 11, 17, 0.05), 0px 2px 4px rgba(9, 11, 17, 0.06);
 	--shadow-lg: 0px 62px 25px rgba(9, 11, 17, 0.01), 0px 35px 21px rgba(9, 11, 17, 0.05),
 		0px 16px 16px rgba(9, 11, 17, 0.1), 0px 4px 9px rgba(9, 11, 17, 0.12);
-
-	/* Text Sizes */
-	--text-sm: 0.875rem;
-	--text-base: 1rem;
-	--text-md: 1.125rem;
-	--text-lg: 1.25rem;
-	--text-xl: 1.625rem;
-	--text-2xl: 2.125rem;
-	--text-3xl: 2.625rem;
-	--text-4xl: 3.5rem;
-	--text-5xl: 4.5rem;
-
-	/* Fonts */
-	--font-system: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu,
-		Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-	--font-body: 'Public Sans', var(--font-system);
-	--font-brand: Rubik, var(--font-system);
-
-	/* Transitions */
-	--theme-transition: 0.2s ease-in-out;
 }
 
-:root.theme-dark {
-	--gray-0: #ffffff;
-	--gray-50: #f3f4f7;
-	--gray-100: #e3e6ee;
-	--gray-200: #c3cadb;
-	--gray-300: #a3acc8;
-	--gray-400: #8490b5;
-	--gray-500: #6474a2;
-	--gray-600: #505d84;
-	--gray-700: #3d4663;
-	--gray-800: #283044;
-	--gray-900: #141925;
-	--gray-999-basis: 225, 31%, 5%;
-	--gray-999: #090b11;
 
-	--accent-light: #1c0056;
-	--accent-regular: #7611a6;
-	--accent-dark: #c561f6;
-	--accent-overlay: hsla(280, 89%, 67%, 0.33);
-	--accent-subtle-overlay: hsla(281, 81%, 36%, 0.33);
+:root.theme-dark {
+	/* this is the text color */
+	--gray-0: color-mix(in srgb, var(--color-1), white 30%);
+	--gray-50: color-mix(in srgb, var(--color-1), white 20%);
+	--gray-100: color-mix(in srgb, var(--color-1), white 10%);
+	--gray-200: var(--color-1);
+	--gray-300: color-mix(in srgb, var(--color-1), black 10%);
+	--gray-400: color-mix(in srgb, var(--color-1), black 20%);
+	--gray-500: color-mix(in srgb, var(--color-1), black 30%);
+	--gray-600: var(--color-5);
+	--gray-700: color-mix(in srgb, var(--color-5), black 10%);
+	--gray-800: color-mix(in srgb, var(--color-5), black 20%);
+	--gray-900: color-mix(in srgb, var(--color-5), black 30%);
+	--gray-999: color-mix(in srgb, var(--color-5), black 40%);
+	--gray-999-basis: 225, 31%, 5%;
+	--gray-999_40: hsla(var(--gray-999-basis), 0.4);
+
+	--accent-light: var(--color-3);
+	--accent-regular: var(--color-4);
+	--accent-dark: var(--color-2);
+
+	--accent-overlay: var(--color-3);
+	--accent-subtle-overlay: var(--accent-overlay);
 	--accent-text-over: var(--gray-0);
 
 	--link-color: var(--accent-dark);
 
-	--gradient-stop-1: #4c11c6;
-	--gradient-subtle: linear-gradient(150deg, var(--gray-900) 19%, var(--gray-999) 81%);
+	/* Gradients */
+	--gradient-stop-1: var(--accent-light);
+	--gradient-stop-2: var(--accent-regular);
+	--gradient-stop-3: var(--accent-dark);
+	
+	--gradient-subtle: linear-gradient(150deg, var(--gray-900) 19%, var(--gray-999) 150%);
+	--gradient-accent: linear-gradient(
+		150deg,
+		var(--gradient-stop-1),
+		var(--gradient-stop-2),
+		var(--gradient-stop-3)
+	);
 	--gradient-accent-orange: linear-gradient(
 		150deg,
-		#ca7879,
+		var(--color-2),
 		var(--accent-regular),
-		var(--accent-light)
+		var(--accent-dark)
 	);
-	--gradient-stroke: linear-gradient(180deg, var(--gray-600), var(--gray-800));
+	--gradient-stroke: linear-gradient(180deg, var(--gray-900), var(--gray-700));
 
+	/* Shadows */
 	--shadow-sm: 0px 6px 3px rgba(255, 255, 255, 0.01), 0px 4px 2px rgba(255, 255, 255, 0.01),
 		0px 2px 2px rgba(255, 255, 255, 0.02), 0px 0px 1px rgba(255, 255, 255, 0.03);
 	--shadow-md: 0px 28px 11px rgba(255, 255, 255, 0.01), 0px 16px 10px rgba(255, 255, 255, 0.03),
@@ -119,6 +154,7 @@ html,
 body {
 	min-height: 100%;
 	overflow-x: hidden;
+	
 }
 
 body {
@@ -139,6 +175,7 @@ body {
 img {
 	max-width: 100%;
 	height: auto;
+	z-index: 1;
 }
 
 a {
@@ -226,6 +263,9 @@ h5 {
 .gap-48 {
 	gap: 12rem;
 }
+.gap-100 {
+	gap: 300rem;
+}
 
 @media (min-width: 50em) {
 	.lg\:gap-2 {
@@ -252,4 +292,111 @@ h5 {
 	.lg\:gap-48 {
 		gap: 12rem;
 	}
+}
+
+.center {
+	text-align: center;
+}
+
+#inputBox {
+	width: 500px; /* Increase width */
+	height: 70px; /* Increase height */
+	padding: 15px; /* Add more padding */
+	font-size: 20px; /* Increase font size */
+	margin-bottom: 20px; /* Increase margin at the bottom */
+	border: 2px solid #ccc;
+	border-radius: 10px; /* Increase border-radius for a more rounded look */
+	box-sizing: border-box;
+  }
+  
+#outputBox {
+	width: 300px;
+	height: 100px;
+	padding: 10px;
+	font-size: 16px;
+	border: 2px solid #ccc;
+	border-radius: 5px;
+	margin-top: 10px;
+	box-sizing: border-box;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+#colorbutton {
+	background-color: var(--accent-regular);
+	color: white;
+	border: none;
+	padding: 10px 20px;
+	font-size: 16px;
+	cursor: pointer;
+	border-radius: 5px;
+	margin-top: 10px;
+}
+button:hover {
+	background-color: var(--accent-regular);
+}
+
+.letter {
+	position: fixed;
+	opacity: 0.7;
+	z-index: -1;
+  }
+
+.container h1 {
+    width: 100%; /* Make sure it spans the full width */
+    margin-bottom: 20px; /* Add spacing below */
+    text-align: center; /* Ensure the text is centered */
+    font-size: 24px; /* Adjust size as needed */
+}
+
+.input-group {
+    display: flex; /* Arrange input and button horizontally */
+	align-items: center; /* Center vertically */
+    justify-content: center; /* Center align the input and button */
+    gap: 10px; /* Add spacing between the input and button */
+    width: 75%; /* Ensure the group spans the container width */
+}
+
+.container input {
+    padding: 10px;
+    font-size: 16px;
+	height: 40px;
+    flex: 1; /* Allow the input box to grow and fill available space */
+    box-sizing: border-box; /* Include padding in the width calculation */
+}
+
+.container button {
+	width: 8vw; /* Button width scales with 10% of the viewport width */
+    height: 8vh; /* Button height scales with 5% of the viewport height */
+    font-size: 2vw; /* Font size scales with viewport width */
+    cursor: pointer;
+    white-space: nowrap;
+  	-ms-transform: translateY(-100%);
+ 	transform: translateY(-17%);
+	border: none;
+	border-radius: 4px;
+	outline: none; /* Remove the default focus outline */
+	box-shadow: none; /* Remove the default shadow */
+	transition: background-color 0.3s, box-shadow 0.3s; /* Smooth effect */
+}
+
+.container {
+	background-color: var(--color-2);
+	font: 1.2em sans-serif;
+	height: 40vh;
+	width: 60vw;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center; /* Center align the text */
+    flex-direction: column; /* Arrange children vertically */
+    gap: 15px; /* Add spacing between child elements */
+  }
+
+.phantom-container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 75vh;
+	box-sizing: border-box; /* Ensures padding/border doesn't affect width/height */
 }

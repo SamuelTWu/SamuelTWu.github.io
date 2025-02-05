@@ -17,8 +17,10 @@ const { title, description } = Astro.props;
 
 <html lang="en">
 	<head>
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.13.0/dist/katex.min.css">
 		<MainHead title={title} description={description} />
 	</head>
+	<script src="../styles/persist_color.js"></script>
 	<body>
 		<div class="stack backgrounds">
 			<Nav />
@@ -29,22 +31,15 @@ const { title, description } = Astro.props;
 		<script>
 			// Add “loaded” class once the document has completely loaded.
 			addEventListener('load', () => document.documentElement.classList.add('loaded'));
+
 		</script>
 
 		<style>
 			:root {
-				--_placeholder-bg: linear-gradient(transparent, transparent);
+				/*this is where we change the background pictures. When we change them, everything gets shifted down a little 
+				bit, so we'll have to play around with these options*/
 				--bg-image-main: url('/assets/backgrounds/bg-main-light-800w.jpg');
 				--bg-image-main-curves: url('/assets/backgrounds/bg-main-light.svg');
-				--bg-image-subtle-1: var(--_placeholder-bg);
-				--bg-image-subtle-2: var(--_placeholder-bg);
-				--bg-image-footer: var(--_placeholder-bg);
-				--bg-svg-blend-mode: overlay;
-				--bg-blend-mode: darken;
-				--bg-image-aspect-ratio: 2.25;
-				--bg-scale: 1.68;
-				--bg-aspect-ratio: calc(var(--bg-image-aspect-ratio) / var(--bg-scale));
-				--bg-gradient-size: calc(var(--bg-scale) * 100%);
 			}
 
 			:root.theme-dark {
